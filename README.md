@@ -76,6 +76,8 @@ export default withMindMap(defineConfig({
 ```
 ````
 
+![](./README/309242250974750.png)
+
 
 ## License
 
