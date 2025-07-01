@@ -25,8 +25,7 @@ features:
 # MindMapView
 
 # image        
-
-![image](./second.md)
+![image](./second.md){mindmap}
 
 
 # fence

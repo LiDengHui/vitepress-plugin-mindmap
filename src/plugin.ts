@@ -12,7 +12,6 @@ export function drawioPlugin(): PluginOption {
             if (!id.includes("vitepress/dist/client/app/index.js")) {
                 return;
             }
-
             src = "\nimport MindMapView from '@dhlx/vitepress-plugin-mindmap/MindMapView.vue';\n" + src;
 
             const lines = src.split("\n");

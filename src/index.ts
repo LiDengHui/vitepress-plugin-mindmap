@@ -47,12 +47,13 @@ const withMindMap = (config: UserConfig) => {
             const token = tokens[idx];
             const result = _image(tokens, idx, options, env, self);
             const src = token.attrGet('src');
+            const type = token.attrGet('mindmap');
 
             if (!src) return result;
             // 找到文件后缀
             const ext = path.extname(src);
             const dir = path.dirname(env.path);
-            if (ext === '.md') {
+            if (ext === '.md' && type !== undefined && type !== null) {
                 // 替换为新的后缀
                 const content = fs.readFileSync(path.join(dir, src), 'utf-8').toString();
                 try {
@@ -62,7 +63,7 @@ const withMindMap = (config: UserConfig) => {
                             <MindMapView data="${escapeHtml(JSON.stringify(root))}" type="file"></MindMapView>
                         </ClientOnly>
                     `;
-                } catch(e) {
+                } catch (e) {
                     return `<pre> ${e} </pre>`
                 }
             }
@@ -86,7 +87,7 @@ const withMindMap = (config: UserConfig) => {
                             </MindMapView>
                         </ClientOnly>
                     `;
-                } catch(e) {
+                } catch (e) {
                     return `<pre> ${e} </pre>`
                 }
 
