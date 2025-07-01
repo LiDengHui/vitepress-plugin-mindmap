@@ -1,0 +1,7 @@
+src
+node_modules
+.DS_Store
+.idea
+docs
+tsconfig.json
+vite.config.js
