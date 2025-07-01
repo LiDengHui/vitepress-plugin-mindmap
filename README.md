@@ -47,7 +47,7 @@ export default withMindMap(defineConfig({
 ```markdown
 # Image Syntax
 
-![Sample Mindmap](./path/to/your.mmd){mindmap}
+![Sample Mindmap](./path/to/your.md){mindmap}
 ```
 
 #### Method 2: Code Fence Syntax (Inline Definition)
