@@ -23,7 +23,7 @@ const mp = ref(null);
 const aspect = ref(1);
 const clientWidth = ref(600);
 
-const resizefn = () => {
+const resizeFn = () => {
   clientWidth.value = svg.value?.clientWidth;
   mp.value?.fit();
 };
@@ -48,13 +48,13 @@ onMounted(async () => {
     const height = rect.y2 - rect.y1;
     aspect.value = height / width;
     clientWidth.value = svg.value?.clientWidth;
-    window.addEventListener("resize", resizefn);
+    window.addEventListener("resize", resizeFn);
   }
 })
 
 onUnmounted(() => {
   mp.value?.destroy();
-  window.removeEventListener("resize", resizefn);
+  window.removeEventListener("resize", resizeFn);
 })
 
 

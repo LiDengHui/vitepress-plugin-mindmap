@@ -2,13 +2,10 @@ import {type  PluginOption} from "vite";
 
 
 export function drawioPlugin(): PluginOption {
-
-
-
     return {
         name: "drawio-plugin",
         enforce: "post",
-        async transform(src, id: string) {
+        async transform(src: string, id: string) {
             if (!id.includes("vitepress/dist/client/app/index.js")) {
                 return;
             }
